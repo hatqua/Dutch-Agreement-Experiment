@@ -1,3 +1,7 @@
+"""
+This module defines a number of classes that represent various syntactic phrases.
+"""
+
 from __future__ import annotations
 from .morphology import A, N, P, V, ConstituentOrder, DefiniteArticle
 
