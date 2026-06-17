@@ -1,3 +1,7 @@
+"""
+This module defines a number of classes that represent various word classes.
+"""
+
 from .enum_extension import EnumExtension
 
 class ConstituentOrder(EnumExtension):
