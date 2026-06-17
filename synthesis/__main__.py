@@ -14,19 +14,9 @@ from argparse import ArgumentParser
 from pathlib import Path
 from .corpus import matrix_with_adverb, matrix_with_embedded, subject_with_adjunct
 
-def main():
-	# Parse CLI arguments
-	parser = ArgumentParser()
-	parser.add_argument("output_directory")
-	parser.add_argument("sample_size", type=int)
-	args = parser.parse_args()
-
-	# Get the path to the output directory, and create the missing directories on the path.
-	output_directory = Path(args.output_directory)
+def main(output_directory: Path, sample_size: int = None):
+	# Create the missing directories on the path.
 	output_directory.mkdir(parents=True, exist_ok=True)
-
-	# Get sample size.
-	sample_size = args.sample_size
 
 	# Condition 1.
 	# Keep count of generated sentences in this variable.
@@ -123,4 +113,16 @@ def main():
 					break
 
 if __name__ == "__main__":
-	main()
+	# Parse CLI arguments
+	parser = ArgumentParser()
+	parser.add_argument("output_directory")
+	parser.add_argument("sample_size", type=int)
+	args = parser.parse_args()
+
+	# Get the path to the output directory.
+	output_directory = Path(args.output_directory)
+
+	# Get sample size.
+	sample_size = args.sample_size
+
+	main(output_directory, sample_size)
