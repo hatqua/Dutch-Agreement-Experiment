@@ -1,0 +1,1 @@
+This project contains two directories: synthesis, and out. The former is a Python package that synthesized the example corpus found in the latter. Please refer to the README file in the former directory for more information on the package.
